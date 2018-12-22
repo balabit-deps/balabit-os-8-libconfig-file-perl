@@ -1,0 +1,33 @@
+Source: libconfig-file-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>,
+           Damyan Ivanov <dmn@debian.org>,
+           Axel Beckert <abe@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper (>= 10),
+               libmodule-build-perl,
+               perl
+Build-Depends-Indep: libtest-pod-coverage-perl,
+                     libtest-pod-perl
+Standards-Version: 4.2.1
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libconfig-file-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libconfig-file-perl.git
+Homepage: https://metacpan.org/release/Config-File
+
+Package: libconfig-file-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends}
+Description: Parses simple configuration files
+ Config::File parses simple configuration files and store its values in
+ an anonymous hash reference. The syntax of the configuration file is
+ quite simple:
+ .
+  # This is a comment
+  VALUE_ONE = foo
+  VALUE_TWO = $VALUE_ONE/bar
+  VALUE_THREE = The value contains a \# (hash). # This is a comment.
+  COMPOSED_VALUE[one] = The first component of a clustered value
+  COMPOSED_VALUE[two] = The second component of a clustered value
